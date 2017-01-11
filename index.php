@@ -4,9 +4,9 @@
  */
  
 
- $conexion = mysql_connect ("localhost", "root", "");
- mysql_select_db ("ica", $conexion);    
- $sql = "SELECT * FROM cities ORDER BY name ASC";
+ $conexion = mysql_connect ("localhost", "root", "root");
+ mysql_select_db ("expexc", $conexion);    
+ $sql = "SELECT * FROM videojuego ";
  $resultado = mysql_query ($sql, $conexion) or die (mysql_error ());
  $registros = mysql_num_rows ($resultado);
  
@@ -17,13 +17,13 @@
    //Informacion del excel
    $objPHPExcel->
     getProperties()
-        ->setCreator("ingenieroweb.com.co")
-        ->setLastModifiedBy("ingenieroweb.com.co")
+        ->setCreator("maso")
+        ->setLastModifiedBy("maso")
         ->setTitle("Exportar excel desde mysql")
         ->setSubject("Ejemplo 1")
         ->setDescription("Documento generado con PHPExcel")
         ->setKeywords("ingenieroweb.com.co  con  phpexcel")
-        ->setCategory("ciudades");    
+        ->setCategory("videojuegos");    
 
    $i = 1;    
    while ($registro = mysql_fetch_object ($resultado)) {
